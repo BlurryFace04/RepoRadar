@@ -1,7 +1,7 @@
 # RepoRadar: Your Open-Source Compass
 Embark on a journey of open-source discovery with RepoRadar, your personal guide to GitHub's vast universe of projects. This application is more than a tool—it's your trusted ally in the quest for meaningful contributions to open-source projects that align with your unique coding interests.
 <br><br>
-![Screenshot (390)](https://github.com/BlurryFace04/RepoRadar/assets/64888928/5bae9cd6-9d64-4b0a-a56b-675893a8f027)
+![Screenshot (390)](https://github.com/BlurryFace04/RepoRadar/assets/64888928/b015bc20-f4f2-4ce5-ae42-917c2be766ce)
 <br><br>
 RepoRadar is a beacon of technology, powered by Python and illuminated by several cutting-edge technologies:
 
