@@ -35,12 +35,13 @@ if prompt:
 
     status_placeholder.empty()
 
-    with st.expander("Recommended Projects"):
-        for url in urls:
-            if url:
-                title, description, image = get_link_preview(url)
+    if st.button("Show Recommendations"):
+        with st.expander("Recommended Projects"):
+            for url in urls:
+                if url:
+                    title, description, image = get_link_preview(url)
 
-                if image:
-                    st.markdown(f'[<img src="{image}" width="300" align="center"/>]({url})', unsafe_allow_html=True)
-                else:
-                    st.markdown(f'[{title}]({url})', unsafe_allow_html=True)
+                    if image:
+                        st.markdown(f'[<img src="{image}" width="300" align="center"/>]({url})', unsafe_allow_html=True)
+                    else:
+                        st.markdown(f'[{title}]({url})', unsafe_allow_html=True)
