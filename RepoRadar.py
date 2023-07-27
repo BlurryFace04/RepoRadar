@@ -17,25 +17,26 @@ prompt = st.text_input('Enter your GitHub username')
 with st.expander("Enter your OpenAI API key for better recommendations"):
     api_key = st.text_input("API Key", type="password")
 
+# The button will appear after the username is entered
 if prompt:
-    status_placeholder = st.empty()
+    if st.button("Generate Recommendations"):
+        status_placeholder = st.empty()
 
-    status_placeholder.text('Crawling your repositories...')
-    user_details, languages_topics = get_repos(prompt)
+        status_placeholder.text('Crawling your repositories...')
+        user_details, languages_topics = get_repos(prompt)
 
-    status_placeholder.text('Crawling open source projects...')
-    unique_repos = asyncio.run(get_projects(languages_topics))
+        status_placeholder.text('Crawling open source projects...')
+        unique_repos = asyncio.run(get_projects(languages_topics))
 
-    status_placeholder.text('Generating recommendations...')
+        status_placeholder.text('Generating recommendations...')
 
-    if api_key:
-        urls = recommend(user_details, unique_repos, api_key)
-    else:
-        urls = recommend(user_details, unique_repos)
+        if api_key:
+            urls = recommend(user_details, unique_repos, api_key)
+        else:
+            urls = recommend(user_details, unique_repos)
 
-    status_placeholder.empty()
+        status_placeholder.empty()
 
-    if st.button("Show Recommendations"):
         with st.expander("Recommended Projects"):
             for url in urls:
                 if url:
