@@ -17,7 +17,6 @@ prompt = st.text_input('Enter your GitHub username')
 with st.expander("Enter your OpenAI API key for better recommendations"):
     api_key = st.text_input("API Key", type="password")
 
-# The button will appear after the username is entered
 if prompt:
     if st.button("Generate Recommendations"):
         status_placeholder = st.empty()
